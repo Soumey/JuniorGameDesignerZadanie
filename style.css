@@ -21,21 +21,17 @@ header {
 
 .layout {
     background-color: #008000;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-    height: calc(100vh - 50px);
-    flex-grow: 1;
-
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:20px;
+    height: calc(100vh - 50px); 
+    padding:20px; 
 }
 
 .diamondsContainer {
     display: flex;
     gap: 5px;
     flex-direction: column;
-    flex-shrink: 0;
-    flex: 0.3;
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -57,9 +53,8 @@ header {
 .lineCircleContainer {
     display: flex;
     gap: 10px;
-    flex-shrink: 0;
-    flex: 0.3;
     margin-top:120px;
+    justify-self: center;
 }
 
 .lines {
@@ -88,5 +83,7 @@ header {
     padding: 10px;
     text-align: center;
     border: 2px solid black;
-    flex: 0.3;
+    width: 200px;
+    justify-self: end;
+    font-size: 36px;
 }
