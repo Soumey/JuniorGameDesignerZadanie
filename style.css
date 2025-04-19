@@ -32,22 +32,22 @@ header {
     display: flex;
     gap: 5px;
     flex-direction: column;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 50px;
+    margin-left: 40px;
 }
 
 .diamond1,
 .diamond2 {
     background-color: red;
-    width: 150px;
-    height: 150px;
+    width: 10vw;
+    aspect-ratio: 1 / 1;
     transform: rotate(45deg);
     border: 2px solid black;
 
 }
 
 .diamond1 {
-    margin-left: 150px;
+    margin-left: 10vw;
 }
 
 .lineCircleContainer {
@@ -60,20 +60,20 @@ header {
 .lines {
     display: flex;
     flex-direction: column;
-    gap: 52px;
+    gap: 6vw;
 }
 
 .line {
     background-color: #0101ff;
-    width: 200px;
-    height: 20px;
+    width: 15vw;
+    height: 2vw;
     border: 2px solid black;
 }
 
 .circle {
     background-color: #0101ff;
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     border-radius: 50%;
     border: 2px solid black;
 }
@@ -83,7 +83,70 @@ header {
     padding: 10px;
     text-align: center;
     border: 2px solid black;
-    width: 200px;
+    width: 25vw;
     justify-self: end;
     font-size: 36px;
+    margin-right: 15px;
+}
+
+@media(max-width:900px) and (min-width:583px){
+    .layout{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+    .diamondsContainer{
+        grid-column:1/2;
+        grid-row:1/2;
+        margin:0;
+        align-self: start;
+    }
+
+    .lineCircleContainer {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin-top: 0;
+        justify-self: start;
+    }
+
+    .abcContainer {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        width: 25vw;
+        background-color: #c93637;
+    }
+}
+
+@media(max-width:582px)
+{
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        gap: 20px;
+        justify-items: center;
+        padding: 20px;
+    }
+
+    .diamondsContainer {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin: 0;
+        align-self: center;
+    }
+
+
+    .lineCircleContainer {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin: 0;
+        align-self: center;
+    }
+
+    .abcContainer {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        align-self: stretch;
+        justify-self: center;
+        background-color: #0101ff;
+        font-size: clamp(18px, 5vw, 28px);
+    }
 }
